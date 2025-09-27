@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-content">
+    <div style="text-align: center; margin-bottom: 2rem;">
+        <h2 style="color: #2e7d32; font-size: 2.5rem; margin-bottom: 1rem;">Привет! Ты любишь читать?</h2>
+        <p style="font-size: 1.3rem; color: #666; line-height: 1.6;">
+            А знаешь, что раньше книги были совсем другими?<br>
+            Отправляйся в увлекательное путешествие по истории книги!
+        </p>
+    </div>
+
+    <h3 style="text-align: center; color: #ff6b35; margin: 2rem 0; font-size: 2rem;">Лента времени</h3>
+
+    <div class="timeline">
+        {% for era in eras %}
+        <div class="era-card" onclick="location.href='{% url 'era_detail' era.slug %}'">
+            {% if era.image %}
+            <img src="{{ era.image.url }}" alt="{{ era.title }}" class="era-image">
+            {% endif %}
+            <h3 class="era-title">{{ era.title }}</h3>
+            <p class="era-description">{{ era.description }}</p>
+            <span style="color: #ff6b35; font-weight: bold;">→ Узнать больше</span>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem;">
+        <p style="font-size: 1.2rem; color: #666;">
+            Выбери эпоху и узнай, как выглядели книги в то время!
+        </p>
+    </div>
+</div>
+{% endblock %}

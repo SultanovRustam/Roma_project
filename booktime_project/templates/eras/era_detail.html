@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ era.title }} - КНИГАtime{% endblock %}
+
+{% block content %}
+<div class="page-content">
+    <a href="{% url 'home' %}" class="button" style="background: #666;">← Вернуться на ленту времени</a>
+    
+    <div style="text-align: center; margin: 2rem 0;">
+        {% if era.image %}
+        <img src="{{ era.image.url }}" alt="{{ era.title }}" style="max-width: 300px; border-radius: 15px; margin-bottom: 1rem;">
+        {% endif %}
+        <h1 style="color: #2e7d32; font-size: 2.5rem;">{{ era.title }}</h1>
+    </div>
+    
+    <div style="font-size: 1.2rem; line-height: 1.8; color: #333;">
+        {{ era_page.content|linebreaks }}
+    </div>
+    
+    {% if era_page.images.all %}
+    <div style="margin: 2rem 0;">
+        <h3 style="color: #ff6b35; margin-bottom: 1rem;">Фотографии и иллюстрации</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+            {% for image in era_page.images.all %}
+            <div style="text-align: center;">
+                <img src="{{ image.image.url }}" alt="{{ image.title }}" style="max-width: 100%; border-radius: 10px;">
+                <p style="margin-top: 0.5rem; font-style: italic;">{{ image.title }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+    
+    <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px; margin-top: 2rem;">
+        <p style="margin: 0; color: #666;">
+            <strong>Материал подготовил:</strong> {{ era_page.created_by }}
+        </p>
+    </div>
+    
+    <div style="text-align: center; margin-top: 2rem;">
+        <a href="{% url 'home' %}" class="button">Вернуться на ленту времени</a>
+    </div>
+</div>
+{% endblock %}
