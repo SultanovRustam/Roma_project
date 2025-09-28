@@ -1,43 +1,64 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block title %}О проекте - КНИГАtime{% endblock %}
+{% block title %}О проекте - Три Ученика{% endblock %}
 
 {% block content %}
 <div class="page-content">
     <h1 style="color: #2e7d32; text-align: center; margin-bottom: 2rem;">О нашем проекте</h1>
-    
+
     <div style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 3rem;">
-        <p>«КНИГАtime» — это интерактивная энциклопедия для школьников, которая позволяет совершить увлекательное путешествие по истории книги.</p>
-        
+        <p>«Три Ученика» — это интерактивная энциклопедия для школьников, которая позволяет совершить увлекательное путешествие по истории книги.</p>
+
         <p>Наш проект создан с любовью к чтению и желанием показать, как менялись книги на протяжении веков — от древних свитков до первых печатных изданий.</p>
-        
+
         <p>Мы верим, что понимание истории книги помогает лучше ценить современные возможности для чтения и обучения!</p>
     </div>
-    
+
     <h2 style="color: #ff6b35; text-align: center; margin: 2rem 0;">Наша команда</h2>
-    
+
     <div class="team-grid">
         <div class="team-member">
+            <div class="team-photo">
+                <img src="{% static 'images/team/roma.jpg' %}" alt="Рома"
+                     onerror="this.onerror=null; this.src='{% static 'images/team/placeholder.jpg' %}'">
+            </div>
             <h3>Рома</h3>
             <p style="color: #666;">Ответственный за разделы:<br>«Книги-свитки» и «Иван Фёдоров»</p>
+            <div class="team-badge">📜 Историк книг</div>
         </div>
-        
+
         <div class="team-member">
+            <div class="team-photo">
+                <img src="{% static 'images/team/dima.jpg' %}" alt="Дима"
+                     onerror="this.onerror=null; this.src='{% static 'images/team/placeholder.jpg' %}'">
+            </div>
             <h3>Дима</h3>
             <p style="color: #666;">Ответственный за разделы:<br>«Пергамент» и «Рукописные книги»</p>
+            <div class="team-badge">✍️ Специалист по рукописям</div>
         </div>
-        
+
         <div class="team-member">
+            <div class="team-photo">
+                <img src="{% static 'images/team/arseniy.jpg' %}" alt="Арсений"
+                     onerror="this.onerror=null; this.src='{% static 'images/team/placeholder.jpg' %}'">
+            </div>
             <h3>Арсений</h3>
             <p style="color: #666;">Ответственный за разделы:<br>«Восковые таблички» и «Берестяные грамоты»</p>
+            <div class="team-badge">🌿 Исследователь древних писем</div>
         </div>
-        
+
         <div class="team-member">
+            <div class="team-photo">
+                <img src="{% static 'images/team/dad.jpg' %}" alt="Папа"
+                     onerror="this.onerror=null; this.src='{% static 'images/team/placeholder.jpg' %}'">
+            </div>
             <h3>Папа</h3>
             <p style="color: #666;">Технический помощник<br>и консультант</p>
+            <div class="team-badge">⚙️ Технический гуру</div>
         </div>
     </div>
-    
+
     <div style="background: #e3f2fd; padding: 2rem; border-radius: 10px; margin-top: 2rem;">
         <h3 style="color: #1565c0; margin-bottom: 1rem;">Как мы работали над проектом:</h3>
         <ul style="font-size: 1.1rem; line-height: 1.6;">
@@ -47,6 +68,28 @@
             <li>Разрабатывали дизайн и структуру сайта</li>
             <li>Тестировали и улучшали проект</li>
         </ul>
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #f5f5f5; border-radius: 10px;">
+        <h3 style="color: #2e7d32; margin-bottom: 1rem;">Наше вдохновение</h3>
+        <div class="inspiration-gallery">
+            <div class="inspiration-image">
+                <img src="{% static 'images/team/inspiration1.jpg' %}" alt="История книги"
+                     onerror="this.style.display='none'">
+            </div>
+            <div class="inspiration-image">
+                <img src="{% static 'images/team/inspiration2.jpg' %}" alt="Древние рукописи"
+                     onerror="this.style.display='none'">
+            </div>
+            <div class="inspiration-image">
+                <img src="{% static 'images/team/inspiration3.jpg' %}" alt="Работа над проектом"
+                     onerror="this.style.display='none'">
+            </div>
+            <div class="inspiration-image">
+                <img src="{% static 'images/team/inspiration4.jpg' %}" alt="Работа над проектом"
+                     onerror="this.style.display='none'">
+            </div>
+        </div>
     </div>
     
     <div style="text-align: center; margin-top: 3rem;">

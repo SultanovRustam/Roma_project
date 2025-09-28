@@ -8,7 +8,7 @@ SECRET_KEY = 'django-insecure-(8s(hbm24n^!*)03@a+gjoms55w9i-cv^*0=5ns57-n2!xy!bv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['109.196.164.163','127.0.0.1','localhost']
+ALLOWED_HOSTS = ['109.196.164.163','127.0.0.1','localhost', 'xn--80ajibkqspl4b.xn--p1ai']
 
 
 # Application definition
@@ -87,12 +87,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/5.2/topics/i18n/
-
-# Настройки для медиа-файлов
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Язык и время
 LANGUAGE_CODE = 'ru-ru'
@@ -106,9 +100,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
+# Медиафайлы
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}КНИГАtime: путешествие во времени длиной в книгу{% endblock %}</title>
+    <title>{% block title %}Три ученика: путешествие во времени длиной в книгу{% endblock %}</title>
     <style>
         * {
             margin: 0;
@@ -240,7 +240,7 @@
         }
 
         .image-item img {
-            max-width: 100%;
+            max-width: 40%;
             border-radius: 8px;
             margin-bottom: 0.5rem;
         }
@@ -282,11 +282,56 @@
             .era-card {
                 min-width: auto;
             }
+        /* Стили для фотографий команды - УМЕНЬШЕННЫЕ */
+.team-photo {
+    width: 100px;  /* Было 150px */
+    height: 100px; /* Было 150px */
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #ff6b35; /* Тоньше бордер */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Меньше тень */
+    position: relative;
+}
 
-            .container {
-                padding: 1rem;
-            }
-        }
+.team-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.team-member:hover .team-photo img {
+    transform: scale(1.05); /* Меньшее увеличение */
+}
+
+/* Стили для галереи вдохновения - УМЕНЬШЕННЫЕ */
+.inspiration-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem; /* Меньше расстояние */
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+.inspiration-image {
+    width: 100px;  /* Было 150px */
+    height: 100px; /* Было 150px */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.inspiration-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
     </style>
 </head>
 <body>
@@ -297,7 +342,7 @@
         </div>
         {% endif %}
 
-        <h1>{{ site_settings.site_name|default:"КНИГАtime" }}</h1>
+        <h1>{{ site_settings.site_name|default:"Три ученика" }}</h1>
         <div class="subtitle">{{ site_settings.site_subtitle|default:"Путешествие во времени длиной в книгу" }}</div>
     </header>
 
@@ -369,7 +414,7 @@
             // Динамическое обновление заголовка страницы
             document.addEventListener('visibilitychange', function() {
                 if (document.hidden) {
-                    document.title = 'Вернись в КНИГАtime! 📚';
+                    document.title = 'Вернись в Три ученика! 📚';
                 } else {
                     setTimeout(() => {
                         document.title = originalTitle;
